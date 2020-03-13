@@ -1,12 +1,7 @@
 // Require dependencies
 const express = require("express");
-const mongojs = require("mongojs");
+const mongoose = require("mongoose");
 const logger = require("morgan");
-
-// Set up Mongo DB
-const databaseUrl = "fitness";
-const collections = ["workout"];
-const db = mongojs(databaseUrl, collections);
 
 // Create express server
 const app = express();
