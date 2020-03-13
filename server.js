@@ -2,3 +2,29 @@
 const express = require("express");
 const mongojs = require("mongojs");
 const logger = require("morgan");
+
+// Set up Mongo DB
+const databaseUrl = "fitness";
+const collections = ["workout"];
+const db = mongojs(databaseUrl, collections);
+
+// Create express server
+const app = express();
+const PORT = process.env.PORT || 8080;
+
+app.use(logger("dev"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("public"));
+
+// Point to server routes
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
+
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
+  useNewUrlParser: true
+});
+
+app.listen(PORT, function() {
+  console.log(`Now listening on port: ${PORT}`);
+});
