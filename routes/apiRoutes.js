@@ -41,5 +41,17 @@ module.exports = function(app) {
       });
   });
 
-  // "/api/workouts/range" ????? - stats page
+  // "/api/workouts/range"
+  app.get("/api/workouts/range", (req, res) => {
+    db.Workout.find({})
+      .then(dbWorkouts => {
+        for (const workout of dbWorkouts) {
+          workout.setTotalDuration();
+        }
+        res.json(dbWorkouts);
+      })
+      .catch(err => {
+        res.json(err);
+      });
+  });
 };
