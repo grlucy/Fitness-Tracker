@@ -6,8 +6,9 @@ async function init() {
     if (workout) {
       location.search = "?id=" + workout._id;
     } else {
-      document.querySelector("#continue-btn").classList.add("d-none")
+      document.querySelector("#continue-btn").classList.add("d-none");
+      document.querySelector("#new-btn").style.display = "block";
+      document.querySelector("#new-btn").style.width = "100%";
     }
   }
 }
-
