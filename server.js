@@ -23,5 +23,5 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 
 // Start server
 app.listen(PORT, function() {
-  console.log(`Now listening on port: ${PORT}`);
+  console.log(`Now listening on port ${PORT} at http://localhost:${PORT}`);
 });
