@@ -8,4 +8,4 @@ A daily workout tracker that uses a Mongo database with a Mongoose schema and ha
 
 ## Credits
 
-- Front-end files were provided by the University of Richmond Coding Bootcamp.
+- Front-end files (in the "public" and "seeders" folders) were provided by the University of Richmond Coding Bootcamp.
