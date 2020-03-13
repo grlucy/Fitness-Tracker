@@ -9,7 +9,14 @@ module.exports = function(app) {
   });
 
   // "/api/workouts/:id" UPDATES one workout's exercises by id
-  // "/exercise?id=:id" ?????
+  app.put("/api/workouts/:id", (req, res) => {
+    db.Workout.updateOne(
+      { _id: req.params.id },
+      { $push: { exercises: req.body } }
+    ).then(dbWorkout => {
+      res.json(dbWorkout);
+    });
+  });
 
   // "/api/workouts" POSTS one workout
 
