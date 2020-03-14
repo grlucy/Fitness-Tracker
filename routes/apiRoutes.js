@@ -41,9 +41,11 @@ module.exports = function(app) {
       });
   });
 
-  // "/api/workouts/range"
+  // "/api/workouts/range" GETS the 7 most recent workouts
   app.get("/api/workouts/range", (req, res) => {
     db.Workout.find({})
+      .limit(7)
+      .sort({ day: -1 })
       .then(dbWorkouts => {
         for (const workout of dbWorkouts) {
           workout.setTotalDuration();

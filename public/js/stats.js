@@ -1,4 +1,4 @@
-// get all workout data from back-end
+// get data for 7 most recent workouts from back-end
 
 fetch("/api/workouts/range")
   .then(response => {
