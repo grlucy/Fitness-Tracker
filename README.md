@@ -1,6 +1,6 @@
 # Fitness-Tracker
 
-Deployed at \_\_
+Deployed at https://workouttracker2020.herokuapp.com/
 
 ## Description
 
